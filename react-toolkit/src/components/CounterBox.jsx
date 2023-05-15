@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { increment, decriment, incrementByAmount } from '../slices/counterSlice';
 
@@ -7,7 +7,7 @@ export default function CounterBox() {
   const counter2 = useSelector((state)=>(state.counterReducer.value))
 
   // 임의로 증가할 값을 useState
-  const [num, setNum] = useState(1);
+  const [num, setNum] = useState(4);
 
   const dispatch = useDispatch();
   return (
@@ -21,9 +21,12 @@ export default function CounterBox() {
       </button>
       
       {/** num값을 바꾸기위한 input태그 작성
-       *  *input태그로 받아온 값은 문자열! 
+       *  * input태그로 받아온 값은 문자열! 
+       *  + 시간이 된다면 num값만큼 감소하는 리듀서 작성
       */}
-      <input type="text" />
+      <input type='number'
+        value={num}
+        onChange={(e)=>{setNum( parseInt(e.target.value) )}} />
       <button onClick={()=>{
         // 매개변수로 전달되는 값은 payload로 사용할 수 있다
         dispatch(incrementByAmount(num))
