@@ -27,8 +27,8 @@ let id = 3;
 
 // 액션 생성 함수
 // addMemo는 메모의 값을 추가하기 위해 함수를 통해 memo의 값을 가져옴
-// : {text, date}을 가져와야 함 >> dispatch 사용 때 확인!
-export const addMemo = (memo)=> ({type : "ADD_MEMO", payload : memo});
+// : {text, date}를 가져와야 함 >> dispatch 사용 때 확인!
+export const addMemo = (memo) => ({type : "ADD_MEMO", payload : memo});
 // id는 메모의 id 값을 가져옴
 export const deleteMemo = (id) => ({type : "DELETE_MEMO", payload : id})
 
